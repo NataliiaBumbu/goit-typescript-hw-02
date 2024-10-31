@@ -9,23 +9,24 @@ import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 
 import './App.css';
 import { Toaster } from 'react-hot-toast';
+import { Photo } from './types';
 
 
 const App = () => {
-	const [isLoading, setIsLoading] = useState(false);
-	const [isError, setIsError] = useState(false);
-	const [page, setPage] = useState(1);
-	const [queryValue, setQueryValue] = useState('');
-	const [gallery, setGallery] = useState([]);
-	const [modalIsOpen, setIsOpen] = useState(false);
-	const [modalImage, setModalImage] = useState('');
-	const [altDescription, setAltDescription] = useState('');
-	const [totalPages, setTotalPages] = useState(0);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [isError, setIsError] = useState<boolean>(false);
+	const [page, setPage] = useState<number>(1);
+	const [queryValue, setQueryValue] = useState<string>('');
+	const [gallery, setGallery] = useState<Photo[]>([]);
+	const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+	const [modalImage, setModalImage] = useState<string>('');
+	const [altDescription, setAltDescription] = useState<string>('');
+	const [totalPages, setTotalPages] = useState<number>(0);
 	
 
 
 
-	const ref = useRef();
+	const ref = useRef<HTMLDivElement>(null);
 
 
 	useEffect(() => {
@@ -54,7 +55,7 @@ const App = () => {
 		getData();
 	}, [page, queryValue]);
 
-	const handleQuery = (newQuery) => {
+	const handleQuery = (newQuery: string) => {
 		setQueryValue(newQuery);
 		setGallery([]);
 		setPage(1);
@@ -67,7 +68,7 @@ const App = () => {
 	const closeModal = () => {
 		setIsOpen(false);
 	};
-	const modalStateData = (src, alt) => {
+	const modalStateData = (src: string, alt: string) => {
 		setModalImage(src);
 		setAltDescription(alt);
 	};
