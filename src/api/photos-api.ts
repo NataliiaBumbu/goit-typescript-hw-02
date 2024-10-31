@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { FetchGalleryPhotosResponse } from '../typess';
 
-import { FetchGalleryPhotosResponse} from '../types';
+
 
 const ACCESS_KEY = 'qvM6fFRr_jAZxwaq0BKjAuZuPKVXFkVr9LUfheYAVXk';
 

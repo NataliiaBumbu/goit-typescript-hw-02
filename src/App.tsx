@@ -9,7 +9,7 @@ import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 
 import './App.css';
 import { Toaster } from 'react-hot-toast';
-import { Photo } from './types';
+import { Photo } from './typess';
 
 
 const App = () => {
